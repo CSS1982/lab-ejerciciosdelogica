@@ -72,8 +72,8 @@ function combinArrays(arr1, arr2) {
         return null;
     }
     //calculo la longitud mínima de las arrays
-    longitudMin = arr1.length <= arr2.length ? arr1.length : arr2.length;
-    arrayCombinada = [];
+    const longitudMin = arr1.length <= arr2.length ? arr1.length : arr2.length;
+    let arrayCombinada = [];
     //Hasta la longitud de la array más corta, combino
     for (let i = 0; i < longitudMin; i++) {
         if (i % 2 === 0) {
@@ -92,8 +92,8 @@ function combinArrays(arr1, arr2) {
     }
 }
 
-arrLt = ["a", "b", "c", "d", "e", "f", "g", "h", "i"];
-arrNum = [1, 2, 3, 4];
+const arrLt = ["a", "b", "c", "d", "e", "f", "g", "h", "i"];
+const arrNum = [1, 2, 3, 4];
 console.log(combinArrays(arrLt, arrNum));
 
 // 5 - Escribe una función que calcule la lista de los primeros 100 números Fibonacci 
@@ -219,7 +219,7 @@ function morseTranslator(string) {
         //cada palabra se separa con un "/"
         let palabras = string.split("/");
         //cada letra se separa con un espacio
-        let letra = palabras.map(palabra => palabra.split(" "));
+        const letra = palabras.map(palabra => palabra.split(" "));
         //frase es la frase transformada
         let frase = [];
         //Frase
@@ -242,7 +242,7 @@ function morseTranslator(string) {
         //entre palabras hay un espacio de separación
         let palabras = string.split(" ");
         //entre letras no hay ningun espacio, es decir cada letra la separo
-        let letra = palabras.map(palabra => palabra.split(""));
+        const letra = palabras.map(palabra => palabra.split(""));
         let frase = [];
         for (let i = 0; i < letra.length; i++) {
             //Palabara en morse
@@ -327,7 +327,7 @@ function numberToletters(num) {
         //valor en número de letras del número ue está siendo evaludo
         let incount = 0;
         //transformo el número en array
-        let numStr = i.toString().split("");
+        const numStr = i.toString().split("");
         //si el número es del 1 al 19 su valor en índice de tens devuelve ya el número
         //de letras y lo añdo al cómputo interno
         if (numStr.length === 1 || i < 20) {
@@ -346,8 +346,8 @@ function numberToletters(num) {
 
             //para replicar la lógica de arriba el resto
             //me quedo con la parte de las decenas y unidades
-            let resto = numStr.splice(1, 2);
-            let j = parseFloat(resto.join(""));
+            const resto = numStr.splice(1, 2);
+            const j = parseFloat(resto.join(""));
             //añado 3 por "and"
             if (j != 0) {
                 incount += 3;
